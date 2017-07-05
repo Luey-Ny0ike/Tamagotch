@@ -4,6 +4,7 @@ class Tamagotchi
     @food_level = food_level
     @sleep_level = sleep_level
     @activity_level = activity_level
+    @time_created = Time.new.min
   end
 
   define_method(:name) do
@@ -30,13 +31,12 @@ class Tamagotchi
   end
 
   define_method(:set_food_level) do
-    food_level = 0
+
   end
 
   define_method(:time_passes) do
-    for food in @food_level
-      food_level -= 1
+    if @time_created <= Time.now.min
+      @food_level -= 1
     end
-    food_level
   end
 end
