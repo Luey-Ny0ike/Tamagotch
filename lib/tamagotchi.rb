@@ -31,12 +31,9 @@ class Tamagotchi
   end
 
   define_method(:set_food_level) do
-
   end
-
+  
   define_method(:time_passes) do
-    if @time_created <= Time.now.min
       @food_level -= 1
-    end
   end
 end
